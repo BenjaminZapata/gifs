@@ -5,6 +5,7 @@
   --black: #0a0908;
   --white: #fefefe;
   --blue: #2aa7f0;
+  --result-columns: 4;
 }
 
 *, *::after, *::before{
@@ -24,12 +25,12 @@ body{
   flex-direction: column;
   align-items: center;
   margin: 3vh 2.5vw;
-  .home{
+  .home, .results{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5vh;
-    h1{
+    .mainTitle{
       color: var(--white);
       font-family: 'Lobster', cursive;
       font-size: clamp(3.5rem, 5vw, 5rem);
@@ -68,5 +69,80 @@ body{
         }
       }
     }
+    .gifList{
+      line-height: 0;
+      -webkit-column-count: var(--result-columns);
+      -webkit-column-gap: 0px;
+      -moz-column-count: var(--result-columns);
+      -moz-column-gap: 0px;
+      column-count: var(--result-columns);
+      column-gap: 0px;
+      width: 100%;
+      list-style: none;
+      .gif{
+        position: relative;
+        img{
+          width: 100%;
+          vertical-align: top;
+          object-fit: cover;
+        }
+        p{
+          background: rgba(0, 0, 0, .4);
+          width: 100%;
+          bottom: 0;
+          font-size: 12px;
+          color: var(--white);
+          margin: 0;
+          position: absolute;
+          padding: .5em;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+  .gifDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    .mainTitle{
+      color: var(--white);
+      font-family: 'Lobster', cursive;
+      font-size: clamp(3.5rem, 5vw, 5rem);
+      letter-spacing: .1rem;
+      transition: .5s all ease;
+      &:hover{
+        text-shadow: 3.5px 3.5px 3px var(--blue);
+      }
+    }
+    footer{
+      display: flex;
+      gap: 2.5vw;
+      color: var(--white);
+    }
+  }
+}
+
+@media (min-width: 500px){
+  :root{
+    --result-columns: 2;
+  }
+}
+
+@media (min-width: 800px){
+  :root{
+    --result-columns: 3;
+  }
+}
+
+@media (min-width: 1100px){
+  :root{
+    --result-columns: 4;
+  }
+}
+
+@media (min-width: 1400px){
+  :root{
+    --result-columns: 5;
   }
 }

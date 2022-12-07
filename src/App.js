@@ -2,6 +2,8 @@ import './App.scss';
 import { GifsContextProvider } from './contexts/GifsContext';
 import { Link, Route } from 'wouter'
 import Home from './pages/Home';
+import { SearchResults } from './pages/SearchResults';
+import { GifDetail } from './pages/GifDetail'
 
 function App() {
   return (
@@ -12,11 +14,11 @@ function App() {
         path='/'
       />
       <Route
-        component={Home}
+        component={SearchResults}
         path='/search/:keyword'
       />
       <Route
-        component={Home}
+        component={GifDetail}
         path='/gif/:id'
       />
     </GifsContextProvider>

@@ -6,12 +6,13 @@ export default function SearchBar () {
   const [path, pushLocation] = useLocation()
 
   const handleChange = (e) => {
-    console.log(e)
+    setKeyword(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     pushLocation(`/search/${keyword}`)
+    setKeyword(e.target[0].value)
   }
 
   return (

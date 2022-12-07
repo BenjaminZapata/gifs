@@ -1,4 +1,4 @@
-import { APIKey, APIUrl } from './APIConfig'
+import { APIUrl, APIKey } from './APIConfig'
 
 export default function getGifs ({ keyword }) {
   const url = `${APIUrl}/search?api_key=${APIKey}&q=${keyword}&limit=25&offset=0&rating=g&lang=es`
@@ -7,7 +7,6 @@ export default function getGifs ({ keyword }) {
     .then(resp => resp.json())
     .then(resp => {
       const { data = [] } = resp
-      console.log(data)
       if (Array.isArray(data)){
         const gifs = data.map(gif => {
           const { images, title, id } = gif
@@ -16,5 +15,6 @@ export default function getGifs ({ keyword }) {
         })
       return gifs
       }
+      return []
     })
 }
