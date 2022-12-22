@@ -5,10 +5,8 @@ import { Gif } from "./Gif"
 
 export function ListOfGifs ({ keyword }) {
   const { gifs, setGifs } = useContext(GifsContext)
-  const lastKeyword = keyword
-  console.log(lastKeyword)
   useEffect(() => {
-    getGifs(lastKeyword)
+    getGifs(keyword)
     .then(gifs =>{
       setGifs(gifs)
       })
