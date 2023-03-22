@@ -1,5 +1,5 @@
-import { Link } from 'wouter'
 import SearchBar from '../components/searchBar/SearchBar'
+import RecentlySearched from '../components/wordTags/RecentlySearched';
 import TagsContainer from '../components/wordTags/TagsContainer'
 
 export default function Home () {
@@ -10,6 +10,7 @@ export default function Home () {
     <section className="home">
         <h1 className='mainTitle'>MyGifs</h1>
       <SearchBar/>
+      <RecentlySearched/>
       <TagsContainer words={randomWords}/>
     </section>
   )

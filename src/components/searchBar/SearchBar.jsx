@@ -18,7 +18,7 @@ export default function SearchBar () {
   return (
     <form className="searchBar" onSubmit={handleSubmit}>
       <input type='text' placeholder="Busca tus gifs..." value={ keyword } onChange={ handleChange }/>
-      <button><img alt='Buscar' src="./icons/search.png"/></button>
+      <button><img alt='Buscar' src="/icons/search.png"/></button>
     </form>
   )
 }
