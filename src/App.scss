@@ -231,6 +231,7 @@ body{
       picture{
         position: relative;
         .gifHover{
+          transition: all .5s ease;
           background-color: var(--gray-transparent);
           opacity: 0;
           display: flex;
@@ -245,6 +246,7 @@ body{
           img{
             width: 30px;
             height: 30px;
+            cursor: pointer;
           }
         }
         &:hover{
