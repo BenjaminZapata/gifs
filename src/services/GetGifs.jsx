@@ -13,7 +13,7 @@ export default function getGifs ({ keyword }) {
         const gifs = data.map(gif => {
           const { images, title, id, user, username } = gif
           const { url } = images.downsized_medium
-          return { title, id, url, user, username }
+          return { title, id, url, user, username, images }
         })
       return gifs
       }

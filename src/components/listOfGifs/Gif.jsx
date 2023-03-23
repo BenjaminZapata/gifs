@@ -6,7 +6,7 @@ export function Gif ({ params }) {
     <>
       <Link to={`/gif/${id}`}>
         <li className="gif">
-          <img src={url} alt={title}/>
+          <img src={url} alt={title} loading="lazy"/>
           <p>{title}</p>
         </li>
       </Link>

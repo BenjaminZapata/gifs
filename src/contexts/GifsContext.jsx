@@ -13,6 +13,8 @@ export function GifsContextProvider ({ children }) {
 
   const eraseRecentlySearched = (arr) => {
     setRecentlySearched([])
+    localStorage.removeItem('recentlySearched')
+    localStorage.removeItem('keyword')
   }
 
   const addToRecentlySearched = (keyword) => {

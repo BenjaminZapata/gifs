@@ -4,6 +4,7 @@
 :root{
   --black: #0a0908;
   --white: #fefefe;
+  --gray-transparent: rgba(130, 130, 130, 0.7);
   --blue: #2aa7f0;
   --result-columns: 4;
 }
@@ -115,6 +116,7 @@ body{
     gap: 4vh;
     padding-bottom: 10vh;
     .mainTitle{
+      cursor: default;
       color: var(--white);
       font-family: 'Lobster', cursive;
       font-size: clamp(5rem, 7.5vw, 7rem);
@@ -143,6 +145,7 @@ body{
         }
       }
       button{
+        cursor: pointer;
         background-color: var(--blue);
         padding: .3em;
         width: 40px;
@@ -208,16 +211,48 @@ body{
       color: var(--white);
       display: flex;
       align-items: center;
-      gap: .5em;
-      img{
-        width: 20px;
-        height: 20px;
+      a{
+        display: flex;
+        gap: .5em;
+        text-decoration: none;
+        p{
+          color: var(--white);
+        }
+        img{
+          width: 20px;
+          height: 20px;
+        }
       }
     }
     footer{
       display: flex;
       gap: 2.5vw;
       color: var(--white);
+      picture{
+        position: relative;
+        .gifHover{
+          background-color: var(--gray-transparent);
+          opacity: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          img{
+            width: 30px;
+            height: 30px;
+          }
+        }
+        &:hover{
+          .gifHover{
+            opacity: 1;
+          }
+        }
+      }
       aside{
         display: flex;
         flex-direction: column;
@@ -228,7 +263,7 @@ body{
           align-items: center;
           gap: .5em;
           img{
-            max-width: 45px;
+            max-height: 45px;
             border-radius: 50%;
           }
         }
